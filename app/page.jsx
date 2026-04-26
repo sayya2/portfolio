@@ -145,7 +145,7 @@ export default function Portfolio() {
             <a href="mailto:adam.sayyaf226@gmail.com">adam.sayyaf226@gmail.com</a>
             <a href="https://github.com/sayya2" target="_blank" rel="noopener noreferrer">github.com/sayya2</a>
             <a href="https://linkedin.com/in/adam-abdulla" target="_blank" rel="noopener noreferrer">linkedin.com/in/adam-abdulla</a>
-            <a href="/cv/Adam_Sayyaf_Abdulla_CV.pdf" target="_blank">Download CV</a>
+            <a href="/cv/Adam_Sayyaf_Abdulla_CV.html" target="_blank" download="Adam_Sayyaf_Abdulla_CV.html">Download CV</a>
           </div>
         </div>
       </div>

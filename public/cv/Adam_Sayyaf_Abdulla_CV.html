@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adam Sayyaf Abdulla — CV</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 10.5pt;
+    color: #1a1a2e;
+    background: #f0f2f5;
+    line-height: 1.72;
+  }
+
+  .page {
+    width: 210mm;
+    height: 297mm;
+    margin: 20px auto;
+    background: #fff;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* ── HEADER ─────────────────────────────────── */
+  .header {
+    background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+    color: #fff;
+    padding: 18px 18px 18px 18px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .header-left { flex-shrink: 0; }
+
+  .name {
+    font-size: 22pt;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+  }
+
+  .title-badge {
+    display: inline-block;
+    margin-top: 4px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #e0e8ff;
+    font-size: 7.5pt;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 3px;
+  }
+
+  .contact-row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-end;
+    flex-shrink: 0;
+  }
+
+  .contact-line {
+    display: flex;
+    gap: 14px;
+    font-size: 7.5pt;
+    color: #c8d8f8;
+  }
+
+  .contact-line a { color: #c8d8f8; text-decoration: none; }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+  }
+
+  .contact-item .icon {
+    font-style: normal;
+    font-size: 8pt;
+    opacity: 0.8;
+  }
+
+  /* ── BODY LAYOUT ─────────────────────────────── */
+  .body {
+    display: grid;
+    grid-template-columns: 1fr 188px;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .main {
+    padding: 18px 18px 18px 18px;
+    border-right: 1px solid #eaeef4;
+    overflow: hidden;
+  }
+
+  .sidebar {
+    padding: 18px 18px 18px 18px;
+    background: #f7f9fc;
+    overflow: hidden;
+  }
+
+  /* ── SECTIONS ────────────────────────────────── */
+  .section { margin-bottom: 18px; }
+  .section:last-child { margin-bottom: 0; }
+
+  .section-title {
+    font-size: 7pt;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #0f3460;
+    padding-bottom: 4px;
+    border-bottom: 2px solid #0f3460;
+    margin-bottom: 7px;
+  }
+
+  /* ── PROFILE ─────────────────────────────────── */
+  .profile-text {
+    font-size: 8.5pt;
+    color: #333;
+    line-height: 1.5;
+  }
+
+  /* ── EXPERIENCE ──────────────────────────────── */
+  .job { margin-bottom: 15px; }
+  .job:last-child { margin-bottom: 0; }
+
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 2px;
+  }
+
+  .job-title {
+    font-weight: 700;
+    font-size: 9.5pt;
+    color: #0f3460;
+  }
+
+  .job-meta {
+    font-size: 7.5pt;
+    color: #667;
+    font-style: italic;
+    white-space: nowrap;
+  }
+
+  .job-company {
+    font-size: 8.5pt;
+    color: #444;
+    margin-bottom: 2px;
+    font-weight: 500;
+  }
+
+  .bullets { list-style: none; margin-top: 2px; }
+
+  .bullets li {
+    font-size: 8.5pt;
+    color: #333;
+    padding: 1px 0 1px 12px;
+    position: relative;
+    line-height: 1.7;
+  }
+
+  .bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #0f3460;
+    font-size: 7pt;
+    top: 3px;
+  }
+
+  /* ── EDUCATION ───────────────────────────────── */
+  .edu-item { margin-bottom: 13px; }
+  .edu-item:last-child { margin-bottom: 0; }
+
+  .edu-degree {
+    font-weight: 700;
+    font-size: 9pt;
+    color: #0f3460;
+  }
+
+  .edu-school {
+    font-size: 8pt;
+    color: #555;
+    margin-top: 1px;
+  }
+
+  .award-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    background: #fff8e1;
+    border: 1px solid #f9c74f;
+    color: #7a5c00;
+    font-size: 7pt;
+    font-weight: 600;
+    padding: 1px 7px;
+    border-radius: 10px;
+    margin-top: 3px;
+  }
+
+  .edu-projects {
+    font-size: 7.5pt;
+    color: #666;
+    margin-top: 2px;
+    font-style: italic;
+  }
+
+  /* ── SIDEBAR — SKILLS ────────────────────────── */
+  .skill-category { margin-bottom: 14px; }
+  .skill-category:last-child { margin-bottom: 0; }
+
+  .skill-cat-title {
+    font-size: 7.5pt;
+    font-weight: 700;
+    color: #0f3460;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+  }
+
+  .tag {
+    background: #e8edf7;
+    color: #0f3460;
+    font-size: 7pt;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 3px;
+    line-height: 1.3;
+  }
+
+  .tag.hi  { background: #0f3460; color: #fff; }
+  .tag.iot { background: #1a5276; color: #fff; }
+
+  /* ── SIDEBAR — HIGHLIGHTS ────────────────────── */
+  .ach-item {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 10px;
+    font-size: 8pt;
+    color: #333;
+    align-items: flex-start;
+    line-height: 1.4;
+  }
+
+  .ach-item:last-child { margin-bottom: 0; }
+
+  .ach-icon {
+    flex-shrink: 0;
+    font-size: 9pt;
+    margin-top: -1px;
+  }
+
+  /* ── PRINT ───────────────────────────────────── */
+  @media print {
+    body { background: #fff; }
+    .page { margin: 0; box-shadow: none; width: 100%; height: 100%; }
+  }
+
+  @page { size: A4; margin: 0; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <div class="name">Adam Sayyaf Abdulla</div>
+      <div class="title-badge">IT Developer &amp; Full-Stack Engineer</div>
+    </div>
+    <div class="contact-row">
+      <div class="contact-line">
+        <div class="contact-item"><i class="icon">📞</i> +960 929 5415</div>
+        <div class="contact-item"><i class="icon">✉</i> adam.sayyaf226@gmail.com</div>
+        <div class="contact-item"><i class="icon">📍</i> Malé, Maldives</div>
+      </div>
+      <div class="contact-line">
+        <div class="contact-item"><i class="icon">🔗</i> <a href="https://linkedin.com/in/adam-abdulla">linkedin.com/in/adam-abdulla</a></div>
+        <div class="contact-item"><i class="icon">💻</i> <a href="https://github.com/sayya2">github.com/sayya2</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- MAIN -->
+    <div class="main">
+
+      <!-- PROFILE -->
+      <div class="section">
+        <div class="section-title">Profile</div>
+        <p class="profile-text">
+          IT Developer with a curious mindset and a willingness to learn by doing. Comfortable taking on unfamiliar challenges — whether that's a new technology, a system outside the usual scope, or figuring things out under pressure. Has worked across web development, IoT, cloud infrastructure, and IT operations, picking up each through hands-on experience rather than a straight path. Holds an APU Best FYP Award for an AI-enabled IoT system built from the ground up.
+        </p>
+      </div>
+
+      <!-- EXPERIENCE -->
+      <div class="section">
+        <div class="section-title">Experience</div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">IT Developer</span>
+            <span class="job-meta">Malé, Maldives &nbsp;|&nbsp; 2025 – Present</span>
+          </div>
+          <div class="job-company">Riyan Pvt Ltd</div>
+          <ul class="bullets">
+            <li>Primarily focused on web and cloud solution development — building client-facing websites, internal portals, and business applications using <strong>Next.js</strong>; leads projects from scoping and client communication through to delivery.</li>
+            <li>Managed migration from a legacy HR system to a new platform, coordinating requirements, data migration, and user transition.</li>
+            <li>Manages <strong>AWS Lightsail</strong> cloud infrastructure and deploys containerised applications via <strong>Docker</strong>; customises <strong>Directus CMS</strong> for client content workflows; maintains a <strong>CD pipeline</strong> across development and production servers using <strong>GitHub Actions</strong>.</li>
+            <li>Contributed to planning and deploying the HQ wireless network using <strong>UniFi U7 Pro</strong> — conducted floor surveys using specialised wireless survey tools for strategic AP placement; configured a <strong>RADIUS server</strong> for enterprise Wi-Fi authentication.</li>
+            <li>Programs elevator control systems, manages access control (keycard, biometric, RFID), administers <strong>Microsoft 365</strong> &amp; <strong>Synology NAS</strong>, and supports office IT troubleshooting.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">Intern</span>
+            <span class="job-meta">Maldives &nbsp;|&nbsp; 2023 – 2024</span>
+          </div>
+          <div class="job-company">Smart City Solutions, HDC</div>
+          <ul class="bullets">
+            <li>Contributed to IoT smart city initiatives — smart waste management and real-time MQTT telemetry; led pilot rollout of a smart office solution integrating IoT sensors with a live dashboard.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">Broadcast Engineer / System Administrator</span>
+            <span class="job-meta">2019 – 2021</span>
+          </div>
+          <div class="job-company">Maldives Media Investment</div>
+          <ul class="bullets">
+            <li>Maintained live broadcasting infrastructure, IT operations, and enterprise wired/wireless networks; handled full technical setup for live production environments.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">Technical Assistant / Intern</span>
+            <span class="job-meta">2016 – 2018</span>
+          </div>
+          <div class="job-company">Maizan Electronics &amp; Island Aviation</div>
+          <ul class="bullets">
+            <li>Assisted in avionics and marine electronics installations: GPS, radar, and radio communication systems.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="section">
+        <div class="section-title">Education</div>
+
+        <div class="edu-item">
+          <div class="edu-degree">Bachelor of Science (Honours) in Information Technology — Specialism in Internet of Things (IoT)</div>
+          <div class="edu-school">Asia Pacific University (APU), Malaysia &nbsp;·&nbsp; 2025</div>
+          <div class="award-badge">🏆 Best Final Year Project Award</div>
+          <div class="edu-projects">AI-Enabled Reverse Vending Machine &nbsp;·&nbsp; Smart Waste Segregation &nbsp;·&nbsp; Solar-Powered Weather Station</div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-degree">Foundation in Computing &amp; Technology</div>
+          <div class="edu-school">Asia Pacific University (APU) &nbsp;·&nbsp; 2022</div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-degree">Diploma in Aircraft Maintenance Engineering</div>
+          <div class="edu-school">Asian Aviation Center &nbsp;·&nbsp; 2016</div>
+        </div>
+      </div>
+
+    </div><!-- /main -->
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+      <div class="section">
+        <div class="section-title">Technical Skills</div>
+
+        <div class="skill-category">
+          <div class="skill-cat-title">Frontend</div>
+          <div class="skill-tags">
+            <span class="tag hi">Next.js</span>
+            <span class="tag hi">React.js</span>
+            <span class="tag">HTML/CSS</span>
+            <span class="tag">JavaScript</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-title">Backend &amp; CMS</div>
+          <div class="skill-tags">
+            <span class="tag hi">Directus CMS</span>
+            <span class="tag">REST APIs</span>
+            <span class="tag">Python</span>
+            <span class="tag">Java</span>
+            <span class="tag">C++</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-title">Cloud &amp; DevOps</div>
+          <div class="skill-tags">
+            <span class="tag hi">Docker</span>
+            <span class="tag hi">AWS Lightsail</span>
+            <span class="tag hi">GitHub Actions</span>
+            <span class="tag">Git CLI</span>
+            <span class="tag">Linux VPS</span>
+            <span class="tag">Win Server</span>
+            <span class="tag">Expo Go</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-title">IoT — Hardware</div>
+          <div class="skill-tags">
+            <span class="tag iot">Raspberry Pi 5</span>
+            <span class="tag iot">ESP32</span>
+            <span class="tag iot">Arduino</span>
+            <span class="tag">Sensors &amp; Actuators</span>
+            <span class="tag">Circuit Design</span>
+            <span class="tag">Solar Power</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-title">IoT — Protocols</div>
+          <div class="skill-tags">
+            <span class="tag iot">MQTT</span>
+            <span class="tag iot">LoWPAN</span>
+            <span class="tag">Node-RED</span>
+            <span class="tag">LPAN</span>
+            <span class="tag">HTTP / REST</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-title">IoT — Data &amp; AI</div>
+          <div class="skill-tags">
+            <span class="tag iot">InfluxDB</span>
+            <span class="tag iot">Grafana</span>
+            <span class="tag">ThingSpeak</span>
+            <span class="tag">Computer Vision</span>
+            <span class="tag">AI Integration</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-title">Networking</div>
+          <div class="skill-tags">
+            <span class="tag">UniFi / Wi-Fi</span>
+            <span class="tag">RADIUS</span>
+            <span class="tag">Access Control</span>
+            <span class="tag">M365 Admin</span>
+            <span class="tag">Synology NAS</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- HIGHLIGHTS -->
+      <div class="section">
+        <div class="section-title">Highlights</div>
+        <div class="ach-item"><span class="ach-icon">🏆</span><span>Best FYP Award — APU Malaysia (IoT / AI)</span></div>
+        <div class="ach-item"><span class="ach-icon">🚀</span><span>End-to-end delivery of multiple production web platforms</span></div>
+        <div class="ach-item"><span class="ach-icon">🏙️</span><span>IoT smart office pilot — national smart city programme</span></div>
+        <div class="ach-item"><span class="ach-icon">📡</span><span>Cross-domain: web, IoT, broadcast &amp; avionics</span></div>
+      </div>
+
+    </div><!-- /sidebar -->
+  </div><!-- /body -->
+
+</div><!-- /page -->
+</body>
+</html>
